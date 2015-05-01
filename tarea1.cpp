@@ -2,7 +2,9 @@
 #include "ui_tarea1.h"
 #include "dialog.h"
 #include "printstudents.h"
+#include "printstudent.h"
 #include "QMessageBox"
+
 Tarea1::Tarea1(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Tarea1)
@@ -35,9 +37,14 @@ void Tarea1::on_BuscarNombreBtn_clicked()
     if(ui->lineEdit->text().isEmpty())
         return;
 
-    QMessageBox msg;
-    msg.setText(bin.Read(ui->lineEdit->text().toInt()));
-    msg.exec();
+    printstudent win;
+    qDebug()<<ui->lineEdit->text();
+    win.setModal(true);
+
+    win.ReadData(ui->lineEdit->text());
+    win.exec();
+
+
 
 
 }

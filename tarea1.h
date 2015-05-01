@@ -16,6 +16,7 @@ public:
     ~Tarea1();
 
     binaries bin;
+
 private slots:
     void on_ImprimirBtn_clicked();
 

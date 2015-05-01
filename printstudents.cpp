@@ -10,12 +10,16 @@ printstudents::printstudents(QWidget *parent) :
     ui->setupUi(this);
     ifstream data("info.data",ios::binary);
     ui->plainTextEdit->insertPlainText("--REGISTROS EN ARCHIVO--\n");
+
     if(!data.is_open()){
                     QMessageBox msg;
                     msg.setText("ERROR DE ARCHIVO!");
                     msg.exec();
+                    ui->plainTextEdit->insertPlainText("ERROR AL TRATAR DE LEER!");
                     return;
         }else{
+
+
 
     data.seekg(0, data.end);
     int size = data.tellg();

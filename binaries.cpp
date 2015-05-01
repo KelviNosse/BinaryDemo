@@ -22,44 +22,75 @@ int binaries::GetPosData(QString numdecuenta)
     int posdata = 0;
     arch.seekg(0, ios::end);
     int size = arch.tellg();
-    string placeof("");
+    QString placeof("");
     bool flag = true;
     arch.seekg(0, ios::beg);
 
-    for(int i = 0; i< size-1; i++){
-        char data;
-        arch.get(data);
-        if(data == INVALIDCHAR){
 
-            if(placeof.compare(numdecuenta.toLatin1().data()) == 0)
-                return posdata;
+        for(int i = 0; i<=size; i++){
+            char data;
+            arch.get(data);
 
-            if(!placeof.empty())
-                placeof.clear();
+            placeof.append(QString(data));
 
-            currentpos++;
+            if(data == INVALIDCHAR){
+               placeof.remove(INVALIDCHAR);
 
-            if(currentpos == 5){
-                currentpos  = 0;
-                flag = true;
-            }
+                if(placeof.compare(numdecuenta) == 0){
 
-            continue;
-        }
+                    return posdata;
 
-        if(currentpos == 0){
-            if(flag){
-                posdata = arch.tellg()-1;
-                flag = false;
-                placeof.append(data+"");
-            }
-        }
+                }
 
-    }
+                if(!placeof.toStdString().empty())
+                    placeof.clear();
 
-    return -1;
+                currentpos++;
 
+                if(currentpos == 5){
+                    currentpos = 0;
+                    flag = true;
+                }
+                continue;
+
+                }
+
+
+
+                if(currentpos == 0){
+                    if(flag){
+                        posdata = arch.tellg()-1;
+                        flag = false;
+                    }
+
+
+                }
+
+                }
+
+
+
+        return -1;
 }
+
+
+
+
+
+
+
+
+//        if(currentpos == numdecuenta.length()){
+
+//            qDebug()<<"SON IGUALESS LOL!";
+//        }
+
+
+
+
+
+
+
 
 
 void binaries::Write(QString name, int numdecuenta, QString carrera, QString fecha, QString uni)
@@ -138,7 +169,7 @@ QString binaries::Read(int numdecuenta)
         }
 
     }
-    qDebug()<<endl;
+    qDebug()<<endl<<endl;
 
     data->close();
 

@@ -17,15 +17,18 @@ SOURCES += main.cpp\
     binaries.cpp \
     dialog.cpp \
     tarea1.cpp \
-    printstudents.cpp
+    printstudents.cpp \
+    printstudent.cpp
 
 HEADERS  += mainwindow.h \
     binaries.h \
     dialog.h \
     tarea1.h \
-    printstudents.h
+    printstudents.h \
+    printstudent.h
 
 FORMS    += mainwindow.ui \
     tarea1.ui \
     dialog.ui \
-    printstudents.ui
+    printstudents.ui \
+    printstudent.ui
