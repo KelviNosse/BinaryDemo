@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>258</width>
+    <height>217</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,6 +22,13 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QPushButton" name="tarea2Btn">
+      <property name="text">
+       <string>Tarea 2</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -29,10 +36,17 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>258</width>
      <height>27</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -43,6 +57,11 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About...</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

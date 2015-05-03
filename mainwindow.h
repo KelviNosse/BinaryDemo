@@ -20,6 +20,10 @@ private slots:
 
     void on_tarea1Btn_clicked();
 
+    void on_actionAbout_triggered();
+
+    void on_tarea2Btn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
