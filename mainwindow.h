@@ -24,6 +24,8 @@ private slots:
 
     void on_tarea2Btn_clicked();
 
+    void on_tarea3Btn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     tarea1.cpp \
     printstudents.cpp \
     printstudent.cpp \
-    tarea2.cpp
+    tarea2.cpp \
+    tarea3.cpp
 
 HEADERS  += mainwindow.h \
     binaries.h \
@@ -27,13 +28,15 @@ HEADERS  += mainwindow.h \
     tarea1.h \
     printstudents.h \
     printstudent.h \
-    tarea2.h
+    tarea2.h \
+    tarea3.h
 
 FORMS    += mainwindow.ui \
     tarea1.ui \
     dialog.ui \
     printstudents.ui \
     printstudent.ui \
-    tarea2.ui
+    tarea2.ui \
+    tarea3.ui
 
 RESOURCES +=

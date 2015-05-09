@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "tarea1.h"
 #include "tarea2.h"
+#include "tarea3.h"
 #include "QMessageBox"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -42,4 +43,11 @@ void MainWindow::on_tarea2Btn_clicked()
     win->exec();
 
 
+}
+
+void MainWindow::on_tarea3Btn_clicked()
+{
+    Tarea3 *win = new Tarea3();
+    win->setModal(true);
+    win->exec();
 }
